@@ -2,14 +2,30 @@ use rand::Rng;
 use std::fs::File;
 use std::io::Write;
 use std::thread;
+use std::time::Instant;
 
 fn main() {
+    println!("---Pokretanje MonteKarlo racunanja---");
+
+    let seq_time_start = Instant::now();
+    sekvencijalno();
+    let seq_time_end = seq_time_start.elapsed();
+
+    let par_time_start = Instant::now();
     paralelno();
+    let par_time_end = par_time_start.elapsed();
+
+    println!("--REZULTATI--");
+    println!("Vreme sekvencijalnog: {:?}", seq_time_end);
+    println!("Vreme paralelnog: {:?}", par_time_end);
+
+    let speedup = seq_time_end.as_secs_f64() / par_time_end.as_secs_f64();
+    println!("Ubrzanje je {:.2}x",speedup);
 }
 
 fn sekvencijalno() {
     let mut rng = rand::thread_rng();
-    let all_dots = 1000000;
+    let all_dots = 10000000;
 
     let mut file = File::create("izlaz_sekvenciajlni").expect("Ne mogu da kreiram fajl");
 
