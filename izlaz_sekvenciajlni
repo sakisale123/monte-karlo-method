@@ -1,2 +1,11 @@
 Trenutna procena PI:
-Na 100000 uzoraka, procena je 3.13884
+Na 100000 uzoraka, procena je 0.31356
+Na 200000 uzoraka, procena je 0.627592
+Na 300000 uzoraka, procena je 0.942308
+Na 400000 uzoraka, procena je 1.256988
+Na 500000 uzoraka, procena je 1.571476
+Na 600000 uzoraka, procena je 1.886704
+Na 700000 uzoraka, procena je 2.200944
+Na 800000 uzoraka, procena je 2.515396
+Na 900000 uzoraka, procena je 2.829652
+Na 1000000 uzoraka, procena je 3.144624
